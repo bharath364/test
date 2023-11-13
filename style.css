@@ -1,0 +1,433 @@
+*{
+    box-sizing:border-box;
+    padding: 0;
+    margin: 0;
+    font-family: poppins,sans-serif; 
+    text-decoration: none;
+
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    overflow-x: hidden ;
+    
+}
+.subheading{
+    font-size: 14px;
+    color:rgb(13, 227, 95);
+    align-items: center;
+
+}
+.hero-header{
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    background-image:url("../image/Backgroung\ Image.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+    
+}
+.hero-header::before{
+    content: " ";
+    position:absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4)
+}
+.wrapper{
+    width: 100%;
+    max-width: 250%;
+    margin: 0;
+    padding: 0 20px;
+    background-color: rgb(11, 11, 11);
+    position: relative;
+    opacity: 100;
+}
+header{
+    padding: 15px 5px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.logo{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+
+}
+.logo i{
+    height: 45px;
+    width: 45px;
+    background-color:	#00ff00 ;
+    border-radius: 50%;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.5rem;
+    padding: 10px;
+    margin-right: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+@keyframes fadeIn{
+    from{
+        opacity:0;
+    }
+    to{
+      opacity: 1;
+    }
+
+}
+.hero-text{
+    position: relative;
+    padding: 50px;
+    left: 50%;
+    transform: translate(-50%, 10%);
+    text-align: center;
+    color: #fff; 
+    font-size: 23px; 
+    font-weight: 500;
+    line-height: 1.5;
+    font-family: 'Source Sans pro',sans-serif;
+    animation: fadeIn is ease-in-out;
+}
+.chat{
+    position: relative ;
+    align-items: right;
+
+}
+.login-button {
+    display: inline-block;
+    margin-top: 20px;  
+    padding: 10px 20px;
+    background-color:	#00ff00; 
+    color: #060606; 
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px; 
+    border: 2px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease ,border 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #0054b4; 
+    border: 2px solid #007ced; 
+    transform: scale(1.05);
+}
+
+.logo .logo-text{
+    font-size: 24px;
+    font-weight: 500;
+    color: #fff;
+}
+nav.togglebtn{
+    width:35px;
+    height: 35px;
+    position: absolute;
+    top: 45px;
+    right: 3%;
+    z-index: 5;
+    cursor: pointer;
+    display: none;
+
+}
+nav .toggebtn span{
+    display: block;
+    background-color: #007ced;
+    margin: 5px 0px ;
+    width: 100%;
+    height: 3px;
+    transition: 0.3s;
+    transition-property: transform,opacity;
+}
+nav.navlinks{
+    list-style-type: none;
+    
+}
+nav .navlinks li{
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 500;
+}
+nav .navlinks li a{
+    color: #e5e5e5;
+    margin-right: 2.5rem;
+    position: relative;
+}
+nav .navlinks li a::after{
+    width: 0;
+    position: absolute;
+    background: black;
+    transition: 0.5s;
+
+}
+nav .navlinks li a:hover::after{
+    width:100%;
+}
+.social{
+
+    display:flex;
+    margin-top: 2%;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: auto;
+    
+}
+.social a{
+    display: inline-flex;
+    width: 20px;
+    height: 20px;
+    color: white;
+    margin-right: 20px;
+    text-decoration: none;
+}
+.social a:hover{
+    color: 	#00ff00;
+}
+/* Chat */
+.chat-container{
+    position: fixed;
+    bottom: 20px;
+    right:20px;
+    display: none;
+}
+
+/* About */
+#About{
+    padding: 80px 0;
+    color: #ababab;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+  /*  background-color: rgb(125, 143, 132);*/
+    background-image: url(../image/about\ bg3.jpg);
+    background-size: 1899px 700px;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+  
+}
+.row{
+    display: flex;
+ /* justify-content: space-around; */
+     align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+.about-col-1{
+    flex-basis: 40%;
+}
+.about-col-1 img{
+  
+    border-radius: 20px;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 2s, transform 2s;
+    animation: fadeIn 2s forwards,slideIn 2s forwards;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Start with no opacity (fully transparent) */
+    }
+    to {
+        opacity: 1; /* End with full opacity (fully visible) */
+    }
+}
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%); /* Start with the image completely off the left side */
+    }
+    to {
+        transform: translateX(0); /* End with the image in its original position (no translation) */
+    }
+}
+.about-col-2{
+   flex-basis: 60%;
+   padding: 0 20px;
+}
+.about-col-2 p{
+    text-align: justify;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+  
+}
+.sub-title {
+    font-size: 60px;
+    font-weight: 600;
+    animation: lightColorText 4.5s infinite;
+    text-shadow: -2px -2px 0 white, 2px -2px 0 white, -2px 2px 0 white, 2px 2px 0 white; /* Add a white border around the text */
+}
+
+@keyframes lightColorText {
+    0% {
+        color: black; /* Light yellow */
+    }
+    33% {
+        color:	#00ff00; /* Light pink */
+    }
+    66% {
+        color: black; /* Light blue */
+    }
+    88%{
+        color: 	#00ff00;
+    }
+    100% {
+        color: black; /* Back to the initial color */
+    }
+}
+
+.button-about{
+  background-color: 	#00ff00;
+  color: rgb(0, 0, 0);
+  padding: 10px 10px;
+  border: 1px solid #333; /* Add a 2px solid border */
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none; /* Remove underline from links */
+  display: inline-block;
+  margin-left: 10px;
+}
+.button-about:hover{
+    background-color:#555;
+    border: 2px solid #555;
+}
+
+
+/* ------------------services---------------*/
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+   
+}
+
+#services{
+    position: relative;
+    background-color: black;
+    padding: 30px 0;
+    color:white;
+}
+
+.sub-title {
+    font-size: 36px;
+    margin: 20px 0;
+    text-transform: uppercase;
+}
+.container{
+    text-align: center;
+}
+.services-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.services-list div {
+    background-image: url(../image/ls1.jpg);
+    background-position: center;
+    background-size: 500px,300px;
+    background-repeat: no-repeat;
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+    
+}
+.services-list div:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, green, black); /* Adjust the gradient as needed */
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.services-list div:hover:before {
+    opacity: 1;
+}
+
+
+.services-list div h2 {
+    font-size: 24px;
+}
+.service {
+    text-align: center; 
+}
+
+.service img {
+    max-width: 650*366px; 
+    height: 300; 
+    border: 2px solid #ccc;
+    width: 300;
+    
+}
+/* ... Your existing CSS ... */
+
+.services-list div img {
+    max-width: 100%;
+    height: 300;
+    border: 1px solid #ccc;
+    transition: transform 0.3s;
+}
+
+.services-list div img:hover {
+    animation: scaleImage 0.3s ease;
+}
+
+@keyframes scaleImage {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+.services-list a{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color:	#00ff00;
+    color: #060606;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+a:hover {
+    background-color:	#00ff00;
+}
+
+.text{
+    font-size: 20px;
+    color:rgb(0, 5, 2);
+
+}
+.logo.logo-name{
+    font-size: 20px;
+    color:rgb(244, 114, 14);
+
+}
+
+/*---- -  extra ----------*/
